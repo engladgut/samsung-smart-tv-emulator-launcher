@@ -4,7 +4,15 @@ public class Launcher
 {
 	public static void main( String[] args )
 	{
-		if( !FileUtil.isSamsungTVApp( "C:\\projects\\workspace\\hcn\\HCN_EPG_H1" ) ) { return; }
+		System.out.println( "Chrome => " + Dependence.getChromeBinaryPath() );
+		System.out.println( "App path => " + Dependence.getAppsDirPath() );
+		System.out.println( "App name => " + Dependence.getAppName() );
+		
+		if( !FileUtil.isSamsungTVApp( Dependence.getAppsDirPath() ) )
+		{
+			System.out.println( "Invalid app path or there is no Samsung TV App." );
+			return;
+		}
 		
 //		if( ( SDKInfo.getCurrentProjectName() == null ) || ( !SDKInfo.getCurrentProjectName().equals( project.getName() ) ) )
 //		{

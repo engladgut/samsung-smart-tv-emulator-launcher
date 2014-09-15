@@ -127,7 +127,8 @@ public class Dependence
 		String appsDirPathName = getProperty( "APP_PATH" );
 		// System.getProperty( "user.home" ) + getPathChar() + getAppsDirName();
 
-		appsDirPathName = System.getProperty( "user.dir" );
+		if( appsDirPathName == null || "".equals( appsDirPathName ) )
+			appsDirPathName = System.getProperty( "user.dir" );
 
 		return appsDirPathName;
 	}
